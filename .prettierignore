@@ -1,0 +1,11 @@
+node_modules/
+dist/
+build/
+.next/
+coverage/
+out/
+package-lock.json
+next-env.d.ts
+apps/api/src/generated/
+.env
+.env.*

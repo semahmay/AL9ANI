@@ -1,0 +1,38 @@
+{
+  "name": "al9ani",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Al9ani (القاني) — a booking platform for local businesses and experiences in Tunisia.",
+  "workspaces": [
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=22.12.0",
+    "npm": ">=10.0.0"
+  },
+  "scripts": {
+    "dev:api": "npm run start:dev --workspace @al9ani/api",
+    "dev:web": "npm run dev --workspace @al9ani/web",
+    "build": "npm run build --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "lint:fix": "npm run lint:fix --workspaces --if-present",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "db:up": "docker compose up -d postgres",
+    "db:down": "docker compose down",
+    "db:logs": "docker compose logs -f postgres",
+    "db:status": "docker compose ps",
+    "prisma:generate": "npm run prisma:generate --workspace @al9ani/api",
+    "prisma:validate": "npm run prisma:validate --workspace @al9ani/api",
+    "prisma:migrate": "npm run prisma:migrate --workspace @al9ani/api",
+    "prisma:migrate:create": "npm run prisma:migrate:create --workspace @al9ani/api",
+    "prisma:migrate:deploy": "npm run prisma:migrate:deploy --workspace @al9ani/api",
+    "prisma:status": "npm run prisma:status --workspace @al9ani/api",
+    "prisma:studio": "npm run prisma:studio --workspace @al9ani/api",
+    "test": "npm run test --workspace @al9ani/api",
+    "create-admin": "npm run create-admin --workspace @al9ani/api"
+  },
+  "devDependencies": {
+    "prettier": "3.9.10"
+  }
+}
